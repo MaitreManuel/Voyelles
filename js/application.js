@@ -70,6 +70,8 @@ function black() {
     var time = 0.3,
         blacks = document.getElementsByClassName("black");
 
+    document.getElementsByTagName("body")[0].style.backgroundImage = "url('./img/pluie.gif')";
+
     for (var i = 0; i < blacks.length; i++) {
         blacks[i].style.transitionDelay = time +'s';
         blacks[i].style.color = '#000000';
@@ -79,6 +81,8 @@ function black() {
 function blue() {
     var time = 0.3,
         blue = document.getElementsByClassName("blue");
+
+    document.getElementsByTagName("body")[0].style.backgroundImage = "url('./img/pluie.gif')";
 
     for (var i = 0; i < blue.length; i++) {
         blue[i].style.transitionDelay = time +'s';
