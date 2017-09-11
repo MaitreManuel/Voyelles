@@ -4,7 +4,7 @@ $( document ).ready(function() {
         setInterval(function() {
             randomSounds();
         }, 30000);
-    }, 3000);
+    }, 5000);
 });
 
 function randomSounds() {
@@ -21,7 +21,6 @@ function randomSounds() {
         rdm = Math.floor(Math.random() * (5 - 1 + 1)) + 1;
 
     if(rdm +"" === sessionStorage.getItem('rdm')) {
-        console.log("change rdm")
         if(rdm === 5) {
             rdm -= 1;
         } else {
@@ -70,7 +69,7 @@ function black() {
     var time = 0.3,
         blacks = document.getElementsByClassName("black");
 
-    document.getElementsByTagName("body")[0].style.backgroundImage = "url('./img/pluie.gif')";
+    document.getElementsByTagName("body")[0].style.backgroundImage = "url('./img/nuit.gif')";
 
     for (var i = 0; i < blacks.length; i++) {
         blacks[i].style.transitionDelay = time +'s';
@@ -82,7 +81,7 @@ function blue() {
     var time = 0.3,
         blue = document.getElementsByClassName("blue");
 
-    document.getElementsByTagName("body")[0].style.backgroundImage = "url('./img/pluie.gif')";
+    document.getElementsByTagName("body")[0].style.backgroundImage = "url('./img/jesus.gif')";
 
     for (var i = 0; i < blue.length; i++) {
         blue[i].style.transitionDelay = time +'s';
