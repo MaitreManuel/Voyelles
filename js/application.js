@@ -26,7 +26,6 @@ function randomSounds() {
         }
 
         sessionStorage.setItem('rdm', rdm);
-
         if(sessionStorage.getItem('song') !== 'true') {
             if(rdm === 1) {
                 white();
@@ -153,7 +152,7 @@ function black() {
 
     audio.volume = 0;
     audio.play();
-    $('#bleu').animate({volume: 1}, 3000);
+    $('#noir').animate({volume: 1}, 3000);
     showSpeaker();
     document.getElementById("overlay").style.backgroundImage = "url('./img/nuit.gif')";
     document.getElementById("overlay").style.opacity = "1";

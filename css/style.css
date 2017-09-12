@@ -52,7 +52,7 @@ h1 {
     margin: 0;
     opacity: 0;
     padding: 0;
-    position: absolute;
+    position: fixed;
     top: 0;
     width: 100vw;
     -webkit-transition: opacity .5s ease-in;
