@@ -24,7 +24,7 @@ function randomSounds() {
         }
 
         sessionStorage.setItem('rdm', rdm);
-
+rdm=4;
         if(sessionStorage.getItem('song') !== 'true') {
             if(rdm === 1) {
                 white();
@@ -70,13 +70,19 @@ function hideSpeaker() {
 function song() {
     init_state();
     showSpeaker();
+
     sessionStorage.setItem('song', 'true');
+
+    document.getElementById("voyelles").volume = 0;
+    $('#voyelles').animate({volume: 1}, 1500);
     document.getElementById("voyelles").play();
 }
 
 function mute() {
     hideSpeaker();
+
     sessionStorage.removeItem('song');
+
     document.getElementById("voyelles").pause();
 }
 
@@ -86,6 +92,11 @@ function init_state() {
     if(sessionStorage.getItem('song', 'true') !== 'true') {
         hideSpeaker();
     }
+    $('#bleu').animate({volume: 0}, 3000);
+    $('#bleu').animate({volume: 0}, 3000);
+    $('#vert').animate({volume: 0}, 3000);
+    $('#rouge').animate({volume: 0}, 3000);
+    $('#blanc').animate({volume: 0}, 3000);
     document.getElementById("overlay").style.opacity = "0";
     document.getElementById("noir").pause();
     document.getElementById("noir").currentTime = 0;
@@ -108,9 +119,12 @@ function init_state() {
 
 function black() {
     var time = 0.3,
+        audio = document.getElementById("noir"),
         blacks = document.getElementsByClassName("black");
 
-    document.getElementById("noir").play();
+    audio.volume = 0;
+    audio.play();
+    $('#bleu').animate({volume: 1}, 3000);
     showSpeaker();
     document.getElementById("overlay").style.backgroundImage = "url('./img/nuit.gif')";
     document.getElementById("overlay").style.opacity = "1";
@@ -123,9 +137,12 @@ function black() {
 }
 function blue() {
     var time = 0.3,
+        audio = document.getElementById("bleu"),
         blue = document.getElementsByClassName("blue");
 
-    document.getElementById("bleu").play();
+    audio.volume = 0;
+    audio.play();
+    $('#bleu').animate({volume: 1}, 3000);
     showSpeaker();
     document.getElementById("overlay").style.backgroundImage = "url('./img/clairon.gif')";
     document.getElementById("overlay").style.opacity = "1";
@@ -138,9 +155,12 @@ function blue() {
 }
 function green() {
     var time = 0.3,
+        audio = document.getElementById("vert"),
         green = document.getElementsByClassName("green");
 
-    document.getElementById("vert").play();
+    audio.volume = 0;
+    audio.play();
+    $('#vert').animate({volume: 1}, 3000);
     showSpeaker();
     document.getElementById("overlay").style.backgroundImage = "url('./img/riviere.gif')";
     document.getElementById("overlay").style.opacity = "1";
@@ -153,9 +173,12 @@ function green() {
 }
 function red() {
     var time = 0.3,
+        audio = document.getElementById("rouge"),
         red = document.getElementsByClassName("red");
 
-    document.getElementById("rouge").play();
+    audio.volume = 0;
+    audio.play();
+    $('#rouge').animate({volume: 1}, 3000);
     showSpeaker();
     document.getElementById("overlay").style.backgroundImage = "url('./img/pluie.gif')";
     document.getElementById("overlay").style.opacity = "1";
@@ -168,9 +191,12 @@ function red() {
 }
 function white() {
     var time = 0.3,
+        audio = document.getElementById("blanc"),
         white = document.getElementsByClassName("white");
 
-    document.getElementById("blanc").play();
+    audio.volume = 0;
+    audio.play();
+    $('#blanc').animate({volume: 1}, 3000);
     showSpeaker();
     document.getElementById("overlay").style.backgroundImage = "url('./img/soleil.gif')";
     document.getElementById("overlay").style.opacity = "1";
