@@ -44,3 +44,29 @@
         height: 2.5em;
     }
 }
+
+@-webkit-keyframes flash {
+    from { opacity: 0.6; }
+    to { opacity: 1; }
+}
+@keyframes flash {
+    from { opacity: 0.6; }
+    to { opacity: 1; }
+}
+.flash {
+    -webkit-animation: flash 1s ease-out infinite alternate;
+    animation: flash 1s ease-out infinite alternate;
+}
+
+@-webkit-keyframes stromb {
+    from { -webkit-filter: invert(0) }
+    to { -webkit-filter: invert(1) }
+}
+@keyframes stromb {
+    from { filter: invert(0); }
+    to { filter: invert(1); }
+}
+.stromb {
+    -webkit-animation: stromb .1s ease-out infinite alternate;
+    animation: stromb .1s ease-out infinite alternate;
+}

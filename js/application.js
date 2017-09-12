@@ -1,4 +1,6 @@
 $( document ).ready(function() {
+    sessionStorage.removeItem('block-all');
+
     document.getElementById("open-eyes").addEventListener("click", eyes);
     document.getElementById("song").addEventListener("mouseover", song);
     document.getElementById("song").addEventListener("mouseleave", mute);
@@ -24,7 +26,7 @@ function randomSounds() {
         }
 
         sessionStorage.setItem('rdm', rdm);
-rdm=4;
+
         if(sessionStorage.getItem('song') !== 'true') {
             if(rdm === 1) {
                 white();
@@ -46,16 +48,41 @@ rdm=4;
 }
 
 function eyes() {
-    var eyes = document.getElementById("eyes"),
+    var wait = document.getElementById("wait"),
+        scare = document.getElementById("scare"),
+        eyes = document.getElementById("eyes"),
         img = document.getElementById("eyes-img"),
         body = document.getElementsByTagName("body")[0];
 
     sessionStorage.setItem('block-all', 'true');
     init_state();
 
+    wait.currentTime = 7;
+
     eyes.style.display = "block";
     setTimeout(function() {
         eyes.style.opacity = 1;
+        img.classList.add("flash");
+        wait.play();
+        setTimeout(function() {
+            wait.currentTime = 0;
+            wait.pause();
+            scare.volume = 1;
+            scare.play();
+            img.classList.remove("flash");
+            img.style.height = "100%";
+            img.style.top = "0";
+            img.style.backgroundImage = "url('img/screameur.gif')";
+            img.classList.add("stromb");
+            setTimeout(function() {
+                scare.currentTime = 0;
+                scare.pause();
+                eyes.removeAttribute("style");
+                img.removeAttribute("style");
+                img.classList.remove("stromb");
+                sessionStorage.removeItem('block-all');
+            }, 2000);
+        }, 5000);
     }, 100);
 }
 
@@ -89,28 +116,30 @@ function mute() {
 function init_state() {
     var spans = document.getElementsByTagName("span");
 
-    if(sessionStorage.getItem('song', 'true') !== 'true') {
-        hideSpeaker();
-    }
-    $('#bleu').animate({volume: 0}, 3000);
-    $('#bleu').animate({volume: 0}, 3000);
-    $('#vert').animate({volume: 0}, 3000);
-    $('#rouge').animate({volume: 0}, 3000);
-    $('#blanc').animate({volume: 0}, 3000);
-    document.getElementById("overlay").style.opacity = "0";
-    document.getElementById("noir").pause();
-    document.getElementById("noir").currentTime = 0;
-    document.getElementById("bleu").pause();
-    document.getElementById("bleu").currentTime = 0;
-    document.getElementById("vert").pause();
-    document.getElementById("vert").currentTime = 0;
-    document.getElementById("rouge").pause();
-    document.getElementById("rouge").currentTime = 0;
-    document.getElementById("blanc").pause();
-    document.getElementById("blanc").currentTime = 0;
+    $('#bleu').animate({volume: 0}, 1500);
+    $('#bleu').animate({volume: 0}, 1500);
+    $('#vert').animate({volume: 0}, 1500);
+    $('#rouge').animate({volume: 0}, 1500);
+    $('#blanc').animate({volume: 0}, 1500);
     setTimeout(function() {
-        document.getElementById("overlay").removeAttribute("style");
-    }, 500);
+        document.getElementById("overlay").style.opacity = "0";
+        document.getElementById("noir").pause();
+        document.getElementById("noir").currentTime = 0;
+        document.getElementById("bleu").pause();
+        document.getElementById("bleu").currentTime = 0;
+        document.getElementById("vert").pause();
+        document.getElementById("vert").currentTime = 0;
+        document.getElementById("rouge").pause();
+        document.getElementById("rouge").currentTime = 0;
+        document.getElementById("blanc").pause();
+        document.getElementById("blanc").currentTime = 0;
+        setTimeout(function() {
+            if(sessionStorage.getItem('song', 'true') !== 'true') {
+                hideSpeaker();
+            }
+            document.getElementById("overlay").removeAttribute("style");
+        }, 500);
+    }, 1500);
 
     for (var i = 0; i < spans.length; i++) {
         spans[i].removeAttribute("style");
