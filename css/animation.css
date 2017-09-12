@@ -15,3 +15,32 @@
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
+@-webkit-keyframes pump {
+    from {
+        top: -0.75em;
+        right: -5em;
+        width: 1.5em;
+        height: 1.5em;
+    }
+    to {
+        top: -1.15em;
+        right: -6em;
+        width: 2.5em;
+        height: 2.5em;
+    }
+}
+@keyframes pump {
+    from {
+        top: -0.75em;
+        right: -5em;
+        width: 1.5em;
+        height: 1.5em;
+    }
+    to {
+        top: -1.15em;
+        right: -6em;
+        width: 2.5em;
+        height: 2.5em;
+    }
+}

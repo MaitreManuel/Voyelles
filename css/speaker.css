@@ -1,0 +1,40 @@
+.cover {
+    display: none;
+    height: 100%;
+    width: 100%;
+}
+.icon {
+    bottom: 0;
+    display: block;
+    left: 90px;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.speaker {
+    background: none;
+    border-bottom: 2.5em solid transparent;
+    border-right: 3em solid #bfbfbf;
+    border-top: 2.5em solid transparent;
+    height: 0;
+    width: 0;
+}
+.speaker:before {
+    background: #bfbfbf;
+    border-radius: 3px 1.5em 1.5em 3px;
+    content: "";
+    height: 1.5em;
+    left: 0;
+    position: absolute;
+    top: -0.69em;
+    width: 3.75em;
+}
+.speaker:after {
+    border-radius: 50%;
+    border-right: 0.5em solid #bfbfbf;
+    content:"";
+    position: absolute;
+    -webkit-animation: pump 0.3s 0.1s infinite alternate;
+    animation: pump 0.3s 0.1s infinite alternate;
+}

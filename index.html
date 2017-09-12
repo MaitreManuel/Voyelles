@@ -4,22 +4,39 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
         <title>Voyelles | Trystan Eveno</title>
+        <link rel="icon" type="image/png" href="img/icon-rimbaud.png" />
         <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="lib/bootstrap/css/bootstrap-grid.min.css">
         <link rel="stylesheet" href="lib/bootstrap/css/bootstrap-reboot.min.css">
         <link rel="stylesheet" href="css/animation.css">
+        <link rel="stylesheet" href="css/ray.css">
+        <link rel="stylesheet" href="css/speaker.css">
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
+        <audio id="blanc" src="son/blanc.mp3"></audio>
+        <audio id="bleu" src="son/bleu.mp3"></audio>
+        <audio id="noir" src="son/noir.mp3"></audio>
+        <audio id="rouge" src="son/rouge.mp3"></audio>
+        <audio id="vert" src="son/vert.mp3"></audio>
+        <audio id="voyelles" src="son/voyelles.mp3"></audio>
+
+        <section id="overlay"></section>
+        <section id="eyes">
+            <div id="eyes-img" class="img"></div>
+        </section>
         <main id="container">
             <section id="content" class="container-fluid">
                 <div class="row justify-content-center">
                     <div class="col-md-6 col-lg-4 overflow-h">
-                        <h1>Le chant des voyelles</h1>
+                        <h1 id="song">Le chant des voyelles</h1>
                         <div class="sun-ray">
                             <a href="http://www.mag4.net/Rimbaud/poesies/Voyelles.html" target="_blank">
                                 <div class="rimbaud">
                                     <div class="img pulse"></div>
+                                    <div id="speaker" class="cover">
+                                            <span class="icon speaker"></span>
+                                    </div>
                                     <div class="ray-box">
                                         <div class="ray ray1"></div>
                                             <div class="ray ray2"></div>
@@ -63,7 +80,7 @@
                                 <br />
                                 S<span class="red">i</span>l<span class="white">e</span>nc<span class="white">e</span>s tr<span class="black">a</span>v<span class="white">e</span>rs<span class="white">é</span>s d<span class="white">e</span>s M<span class="blue">o</span>nd<span class="white">e</span>s <span class="white">e</span>t d<span class="white">e</span>s <span class="black">A</span>ng<span class="white">e</span>s :
                                 <br />
-                                <span class="purple">- <span class="blue">O</span> l'<span class="blue">o</span>m<span class="white">é</span>ga, r<span class="black">a</span>y<span class="blue">o</span>n v<span class="red">i</span><span class="blue">o</span>l<span class="white">e</span>t de S<span class="white">e</span>s Y<span class="white">e</span><span class="green">u</span>x !</span>
+                                <span id="open-eyes" class="purple">- <span class="blue">O</span> l'<span class="blue">o</span>m<span class="white">é</span>ga, r<span class="black">a</span>y<span class="blue">o</span>n v<span class="red">i</span><span class="blue">o</span>l<span class="white">e</span>t de S<span class="white">e</span>s Y<span class="white">e</span><span class="green">u</span>x !</span>
                             </p>
                         </div>
                     </div>
